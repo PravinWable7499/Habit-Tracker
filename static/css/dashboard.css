@@ -1,0 +1,253 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0f172a;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    color: #fff;
+}
+
+.dashboard {
+    padding: 20px;
+}
+
+/* HEADER */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.today-text h1 {
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+.today-text p {
+    color: #94a3b8;
+    font-size: 28px;
+    margin-top: 4px;
+}
+
+/* ADD BUTTON */
+.add-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: #3b82f6;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* MONTH CALENDAR */
+.month-calendar {
+    margin-top: 30px;
+    background: #1e293b;
+    border-radius: 18px;
+    padding: 14px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.month-calendar::-webkit-scrollbar {
+    display: none;
+}
+
+/* SCROLL ROW */
+.calendar-row {
+    display: flex;
+    gap: 12px;
+    min-width: max-content;
+}
+
+/* DAY CARD */
+.day-card {
+    width: 80px;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 14px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.day-name {
+    font-size: 20px;
+    color: #94a3b8;
+    margin-bottom: 6px;
+}
+
+.day-date {
+    font-size: 24px;
+}
+
+/* TODAY */
+.day-card.today {
+    background: #3b82f6;
+}
+
+.day-card.today .day-name,
+.day-card.today .day-date {
+    color: #fff;
+}
+
+/* SHIFT TABS – MOBILE FIRST */
+.shift-tabs {
+    display: flex;
+    gap: 14px;
+    margin-top: 20px;
+    overflow-x: auto;
+    padding: 4px 2px 10px;
+}
+
+.shift-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+/* BIG TOUCH BUTTONS */
+.shift-btn {
+    flex-shrink: 0;
+    min-width: 260px;           /* 👈 makes them broad */
+    padding: 22px 22px;         /* 👈 taller + wider */
+    border-radius: 40px;        /* 👈 soft pill */
+    background: #334155;
+    color: #cbd5f5;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    transition: all 0.25s ease;
+}
+
+/* ACTIVE STATE */
+.shift-btn.active {
+    background: #3b82f6;
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(59, 130, 246, 0.45);
+}
+
+/* PRESS FEEDBACK */
+.shift-btn:active {
+    transform: scale(0.94);
+}
+
+/* CREATE HABIT SECTION */
+.create-habit {
+    margin-top: 30px;
+}
+
+/* HABIT TYPE BUTTONS */
+.habit-type-tabs {
+    display: flex;
+    gap: 12px;
+}
+
+.habit-type {
+    flex: 1;
+    padding: 14px;
+    border-radius: 18px;
+    background: #1e293b;
+    color: #94a3b8;
+    border: none;
+    font-weight: 600;
+}
+
+.habit-type.active {
+    background: #3b82f6;
+    color: #fff;
+}
+
+/* DESCRIPTION */
+.habit-desc {
+    margin: 14px 0 20px;
+    color: #cbd5f5;
+    font-size: 14px;
+}
+
+/* CREATE OWN */
+.create-own-btn {
+    width: 100%;
+    padding: 18px;
+    border-radius: 22px;
+    background: #334155;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    margin-bottom: 20px;
+}
+
+/* SHIFT SELECTOR */
+.shift-selector.hidden {
+    display: none;
+}
+
+.shift-tabs {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+}
+
+.shift-btn {
+    min-width: 130px;
+    padding: 16px;
+    border-radius: 26px;
+    background: #334155;
+    color: #cbd5f5;
+    border: none;
+    font-weight: 600;
+}
+
+.shift-btn.active {
+    background: #3b82f6;
+    color: white;
+}
+
+/* HABIT LIST */
+.habit-list {
+    margin-top: 20px;
+    display: grid;
+    gap: 14px;
+}
+
+.habit-card {
+    padding: 18px;
+    background: #1e293b;
+    border-radius: 18px;
+    font-weight: 500;
+}
+
+.create-habit-wrapper {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+}
+
+.create-habit-btn {
+    width: 100%;
+    max-width: 420px;
+    padding: 16px;
+    background: #334155;
+    border: none;
+    border-radius: 18px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.create-habit-btn:hover {
+    background: #3b82f6;
+}

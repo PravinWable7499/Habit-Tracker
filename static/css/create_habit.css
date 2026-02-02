@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #0b1c3a, #020617);
+  color: #fff;
+}
+
+.page {
+  max-width: 480px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Tabs */
+.habit-type-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.habit-type {
+  padding: 8px 14px;
+  background: transparent;
+  border: 1px solid #3b82f6;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.habit-type.active {
+  background: #3b82f6;
+}
+
+/* Description */
+.habit-desc {
+  text-align: center;
+  margin: 15px 0 25px;
+  opacity: 0.9;
+}
+
+/* Suggestions */
+.section-title {
+  margin-bottom: 10px;
+}
+
+.habit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.habit-item {
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  cursor: pointer;
+}
+
+.habit-item.selected {
+  background: #3b82f6;
+}
+
+/* Create own */
+.create-own-btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: #3b82f6;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* Form */
+.create-form {
+  margin-top: 20px;
+}
+
+.habit-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.save-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #22c55e;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}

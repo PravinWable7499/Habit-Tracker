@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- TOP HEADER -->
+    <div class="top-bar">
+        <div class="today-text">
+            <h1>TODAY</h1>
+            <p id="today-date"></p>
+        </div>
+
+        <!-- FIXED: Flask route -->
+        <button class="add-btn" onclick="window.location.href='/create-habit'">+</button>
+    </div>
+
+    <!-- MONTH SCROLL CALENDAR -->
+    <div class="month-calendar">
+        <div class="calendar-row" id="calendarRow"></div>
+    </div>
+
+    <!-- SHIFT FILTER -->
+    <div class="shift-tabs">
+
+        <a href="/dashboard?shift=ALL"
+           class="shift-btn {% if active_shift == 'ALL' %}active{% endif %}">
+            <span class="icon">●</span> ALL
+        </a>
+
+        <a href="/dashboard?shift=MORNING"
+           class="shift-btn {% if active_shift == 'MORNING' %}active{% endif %}">
+            ☀ MORNING
+        </a>
+
+        <a href="/dashboard?shift=AFTERNOON"
+           class="shift-btn {% if active_shift == 'AFTERNOON' %}active{% endif %}">
+            ☀ AFTERNOON
+        </a>
+
+        <a href="/dashboard?shift=EVENING"
+           class="shift-btn {% if active_shift == 'EVENING' %}active{% endif %}">
+            🌙 EVENING
+        </a>
+
+    </div>
+
+    <div class="create-habit-wrapper">
+        <button onclick="window.location.href='/create-habit'" class="create-own-btn">
+            CREATE YOUR FIRST HABIT
+        </button>
+    </div>
+
+    <!-- HABIT LIST -->
+    <div class="habit-list" id="habitList">
+
+        {% if habits %}
+            {% for habit in habits %}
+                <div class="habit-card">
+                    <span class="habit-name">{{ habit.name }}</span>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="empty-text">No habits added yet</p>
+        {% endif %}
+
+    </div>
+
+    <!-- CREATE HABIT BUTTON -->
+    <!-- <div class="create-habit-wrapper">
+        <button onclick="window.location.href='/create-habit'" class="create-own-btn">
+            CREATE YOUR OWN
+        </button>
+    </div> -->
+
+</div>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

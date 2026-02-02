@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Create Habit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/create_habit.css') }}">
+</head>
+
+<body>
+
+<div class="page">
+
+  <h1 class="title">Create Habit</h1>
+
+  <!-- TABS -->
+  <div class="habit-type-tabs">
+    <button class="habit-type active" data-type="regular">REGULAR</button>
+    <button class="habit-type" data-type="negative">NEGATIVE</button>
+    <button class="habit-type" data-type="todo">ONE-TIME TODO</button>
+  </div>
+
+  <p class="habit-desc" id="habitDesc">
+    Build positive habits for your daily routine.
+  </p>
+
+  <!-- SUGGESTIONS -->
+  <h3 class="section-title">Choose a habit</h3>
+
+  <div class="habit-list">
+    <div class="habit-item">Drink Water</div>
+    <div class="habit-item">Workout</div>
+    <div class="habit-item">Meditation</div>
+    <div class="habit-item">Reading</div>
+    <div class="habit-item">Walking</div>
+  </div>
+
+  <!-- CREATE YOUR OWN -->
+  <button class="create-own-btn" id="openCreate">
+    CREATE YOUR OWN
+  </button>
+
+  <!-- CREATE FORM (HIDDEN INITIALLY) -->
+  <div class="create-form hidden" id="createForm">
+    <input
+      type="text"
+      class="habit-input"
+      placeholder="Create a habit on your own"
+    >
+    <button class="save-btn">ADD HABIT</button>
+  </div>
+  
+
+</div>
+
+<script src="{{ url_for('static', filename='js/create_habit.js') }}"></script>
+</body>
+</html>

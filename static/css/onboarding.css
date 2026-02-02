@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(180deg, #0f172a, #020617);
+    color: #fff;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+    padding: 22px;
+    animation: fadeIn 0.6s ease;
+}
+
+/* Progress bar */
+.progress {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 28px;
+}
+.progress div {
+    flex: 1;
+    height: 5px;
+    background: #1e293b;
+    border-radius: 10px;
+}
+.progress div.active {
+    background: #3b82f6;
+}
+
+/* Steps */
+.step {
+    display: none;
+    animation: slideUp 0.45s ease;
+}
+.step.active {
+    display: block;
+}
+
+h2 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 26px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 14px;
+    border: none;
+    background: #1e293b;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+input:focus {
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+/* Options */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.options button {
+    width: 100%;
+    padding: 16px;
+    background: #1e293b;
+    border: none;
+    border-radius: 16px;
+    color: white;
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+}
+.options button:hover {
+    background: #334155;
+}
+.options button.selected {
+    background: #3b82f6;
+    transform: scale(1.02);
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 28px 0 18px;
+    font-size: 13px;
+    color: #94a3b8;
+}
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #1e293b;
+}
+.divider span {
+    padding: 0 12px;
+}
+
+/* Buttons */
+.next-btn,
+.skip-btn {
+    width: 100%;
+    padding: 16px;
+    background: #3b82f6;
+    border: none;
+    border-radius: 18px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.next-btn:hover,
+.skip-btn:hover {
+    background: #2563eb;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+/* Progress circle */
+.progress-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 30px auto 0;
+}
+.progress-circle svg {
+    transform: rotate(-90deg);
+}
+.progress-circle circle {
+    fill: none;
+    stroke-width: 12;
+    stroke-linecap: round;
+}
+.progress-circle .bg {
+    stroke: #1e293b;
+}
+.progress-circle .fg {
+    stroke: #3b82f6;
+    stroke-dasharray: 339.292;
+    stroke-dashoffset: 339.292;
+}
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

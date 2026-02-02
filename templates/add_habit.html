@@ -1,0 +1,12 @@
+<h2>Add Habit: {{ habit_name }}</h2>
+
+<form method="POST">
+  <div class="shift-tabs">
+    <label><input type="radio" name="shift" value="ALL" required> ALL</label>
+    <label><input type="radio" name="shift" value="MORNING"> MORNING</label>
+    <label><input type="radio" name="shift" value="AFTERNOON"> AFTERNOON</label>
+    <label><input type="radio" name="shift" value="EVENING"> EVENING</label>
+  </div>
+
+  <button type="submit">ADD HABIT</button>
+</form>
